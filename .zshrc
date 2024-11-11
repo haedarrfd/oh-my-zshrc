@@ -25,7 +25,7 @@ eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 # History
-HISTSIZE=1000
+HISTSIZE=2000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
@@ -37,15 +37,15 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-# Language environment
-export LANG=en_US.UTF-8
-
+export LANG=en_US.UTF-8 # Language environment
 # Set tty 
 if [ -n "$TTY" ]; then
   export GPG_TTY=$(tty)
 else
   export GPG_TTY="$TTY"
 fi
+export EDITOR=nvim # Default editor
+export TERM="xterm-256color" # Default terminal color
 
 # Keybindings
 bindkey '^e' autosuggest-execute
@@ -58,10 +58,11 @@ zstyle ':completion:*' menu no
 
 # Aliases
 alias ls='ls --color'
+alias la='ls -lathr'
+alias v=$EDITOR
 
 # Shell integrations
-# Set up fzf key bindings and fuzzy completion 
-eval "$(fzf --zsh)"
+eval "$(fzf --zsh)" # Set up fzf key bindings and fuzzy completion 
 
 # Automated add fzf 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -71,13 +72,17 @@ eval "$(fzf --zsh)"
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
-# When enter a command these directories are searched first
-export PATH="/usr/local/bin:/usr/bin:$PATH"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.cargo/bin:$PATH"
 # Bun path
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 # Go path
-export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOPATH
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
 # Xampp path
 export PATH=/opt/lampp/bin/:$PATH
 # Node version manager path
