@@ -40,7 +40,7 @@ setopt hist_find_no_dups
 export EDITOR="nvim" # Default editor
 export SHELL="zsh" # Default shell
 export LANG=en_US.UTF-8 # Language environment
-export TERM="xterm-256color" # Default terminal color
+export TERM="screen-256color" # Default terminal color
 # Set tty 
 if [ -n "$TTY" ]; then
   export GPG_TTY=$(tty)
