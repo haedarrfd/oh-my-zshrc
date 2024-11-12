@@ -18,7 +18,7 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 
 # Load completions
-autoload -U compinit && compinit
+autoload -Uz compinit && compinit
 
 # Starship config
 eval "$(starship init zsh)"
