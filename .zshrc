@@ -37,15 +37,21 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
+export EDITOR="nvim" # Default editor
+export SHELL="zsh" # Default shell
 export LANG=en_US.UTF-8 # Language environment
+export TERM="xterm-256color" # Default terminal color
 # Set tty 
 if [ -n "$TTY" ]; then
   export GPG_TTY=$(tty)
 else
   export GPG_TTY="$TTY"
 fi
-export EDITOR=nvim # Default editor
-export TERM="xterm-256color" # Default terminal color
+
+# Aliases
+alias ls='ls --color'
+alias la='ls -lathr'
+alias v=$EDITOR
 
 # Keybindings
 bindkey '^e' autosuggest-execute
@@ -55,11 +61,6 @@ bindkey '^a' autosuggest-accept
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
-
-# Aliases
-alias ls='ls --color'
-alias la='ls -lathr'
-alias v=$EDITOR
 
 # Shell integrations
 eval "$(fzf --zsh)" # Set up fzf key bindings and fuzzy completion 
