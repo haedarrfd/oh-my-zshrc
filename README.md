@@ -8,7 +8,7 @@
 
 ## Introduction
 
-oh-my-zshrc is my setup configuration for the [Z shell](https://en.wikipedia.org/wiki/Z_shell) (zsh), designed to enhance my productivity while code and improving my knowledge of scripting.
+oh-my-zshrc is my configuration setup for the [Z shell](https://en.wikipedia.org/wiki/Z_shell) (zsh), designed to enhance my productivity while code and improving my knowledge of scripting.
 
 ## ⚡️ Requirements
 
@@ -36,4 +36,4 @@ After that, your terminal will be automatically install all plugins that exists 
 
 ## 🎨 Themes
 
-I use [Starhip](https://starship.rs/) for prompt with custom themes. You can use another themes for example [Powerlevel10k](https://github.com/romkatv/powerlevel10k). If you'd still like to use starhip, I'll leave my repo where you can check on my starship setup [here](https://github.com/haedarrfd/oh-my-starship.git).
+I use [Starhip](https://starship.rs/) for prompt with custom themes. You can use another themes for example [Powerlevel10k](https://github.com/romkatv/powerlevel10k). If you'd still like to use Starhip, I'll leave my repo where you can check on my Starship setup [here](https://github.com/haedarrfd/oh-my-starship.git).
